@@ -9,21 +9,24 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('JSON DECODE EXAMPLE'),
       ),
-      body: Column(
-        children: <Widget>[
-          RaisedButton(
-              child: Text('Use Stateful Mode'),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => StatefulHome()));
-              }),
-          RaisedButton(
-              child: Text('Use FutureBuilder'),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => StatelessHome()));
-              })
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+                child: Text('Use Stateful Mode'),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => StatefulHome()));
+                }),
+            RaisedButton(
+                child: Text('Use FutureBuilder'),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => StatelessHome()));
+                })
+          ],
+        ),
       ),
     );
   }

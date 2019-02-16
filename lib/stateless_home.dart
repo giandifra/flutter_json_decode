@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:json_decode/post_model.dart';
 import 'package:json_decode/utils.dart';
@@ -7,11 +6,13 @@ class StatelessHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('FutureBuilder Mode'),
+      ),
       body: FutureBuilder<List<Post>>(
         future: getPosts(),
         builder: (context, snapshot) {
-          if(snapshot.hasData){
+          if (snapshot.hasData) {
             final posts = snapshot.data;
             return ListView.builder(
                 itemCount: posts.length,
@@ -22,8 +23,10 @@ class StatelessHome extends StatelessWidget {
                     subtitle: Text(posts[index].body),
                   );
                 });
-          }else{
-            return Center(child: CircularProgressIndicator(),);
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           }
         },
       ),

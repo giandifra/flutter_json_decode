@@ -18,7 +18,7 @@ class _StatefulHomeState extends State<StatefulHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Statefull Mode'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.cloud_download),
